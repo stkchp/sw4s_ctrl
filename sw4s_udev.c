@@ -28,7 +28,7 @@
 /* store search device */
 static size_t sw4s_count = 0;
 static bool sw4s_searched = false;
-static char sw4s_devices[SW4S_LIST_MAX][PATH_MAX] = {0};
+static char sw4s_devices[SW4S_LIST_MAX][PATH_MAX] = {{0}};
 
 static void sw4s_search_device(void)
 {

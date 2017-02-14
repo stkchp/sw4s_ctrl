@@ -5,7 +5,7 @@ CC = gcc
 
 TARGET = sw4s_ctrl
 
-CFLAGS = -O0 -g3
+CFLAGS = -O0 -g3 -Wall
 
 LIBS = -ludev
 
