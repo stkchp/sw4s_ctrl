@@ -1,5 +1,5 @@
 /*
- * U2C-SW4S power on/off utility in linux
+ * U2H-SW4S power on/off utility in linux
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms and conditions of the GNU General Public License,
@@ -264,7 +264,7 @@ int main(int argc, char **argv) {
 	/* get target device */
 	res = sw4s_get_device(req_target, target, sizeof(target));
 	if(res) {
-		fprintf(stderr, "Error: Cannot get U2C-SW4S device.\n");
+		fprintf(stderr, "Error: Cannot get U2H-SW4S device.\n");
 		return 1;
 	}
 	printf("target device:\n%s\n\n", target);
