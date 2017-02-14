@@ -94,6 +94,7 @@ int sw4s_get_status(int fd)
 	    (buf[2] & 0x3) != 0x3) {
 		fprintf(stderr, "Error: %s response is not status.\n",
 				__func__);
+#if 0
 		/* dump response */
 		size_t i;
 		fprintf(stderr, "response:");
@@ -102,6 +103,7 @@ int sw4s_get_status(int fd)
 			fprintf(stderr, " %02X", (unsigned int)buf[i]);
 		}
 		fprintf(stderr, "\n");
+#endif
 		return -1;
 	}
 
@@ -129,12 +131,14 @@ int sw4s_set_power(int fd, int target, bool on)
 		buf[3] = sw4s_set_power_value[i];
 		buf[4] = on ? 0x01 : 0x00;
 
+#if 0
 		res = write(fd, buf, 8);
 		if (res < 0) {
 			fprintf(stderr, "Error: %s cannot write. (port=%zu)(errno=%d)\n",
 					__func__, i + 1, errno);
 			return -1;
 		}
+#endif
 	}
 
 	return 0;
@@ -152,7 +156,7 @@ int command_onoff(int fd, int cur, int req, bool on)
 	}
 
 	if(needed == 0) {
-		fprintf(stderr, "Info: Already port is seted desired value.\n");
+		fprintf(stderr, "Info: Already port is setted desired value.\n");
 		return 0;
 	}
 
@@ -302,6 +306,7 @@ int main(int argc, char **argv) {
 				close(fd);
 				return 1;
 			}
+			printf("Command successful.\n");
 			break;
 	}
 
