@@ -179,16 +179,14 @@ int command_onoff(int fd, int cur, int req, bool on)
 
 void usage(char *prog) {
 	printf(
-"Usage: %s [option] [command]\n"
-"	[option]\n"
-"	-d device	target hidraw device filename\n"
-"	-1,-2,-3,-4	target port\n"
-"	\n"
-"	[command]\n"
-"	show		show current status\n"
-"	on		power on target port\n"
-"	off		power off target port\n"
-, prog);
+"Usage: %s [options] show\n"
+"   or: %s [options] on\n"
+"   or: %s [options] off\n"
+"\n"
+"Options: [ d1234h ]\n"
+"  -d device		target hidraw device\n"
+"  -1,-2,-3,-4		target port(on/off only)\n"
+, prog, prog, prog);
 }
 
 int main(int argc, char **argv) {
